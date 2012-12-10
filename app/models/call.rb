@@ -21,7 +21,7 @@ class Call < ActiveRecord::Base
     end
 
     before_transition any - :goodbye => :goodbye do |call, transition|
-      call.user.hung_up!
+      call.user.hung_up! if call.user.present?
     end
 
     after_transition :queued => :connected do |call|

@@ -1,3 +1,3 @@
-Pusher.app_id = ENV['PUSHER_APP_ID']
-Pusher.key = ENV['PUSHER_KEY']
-Pusher.secret = ENV['PUSHER_SECRET']
+Pusher.app_id = ENV['CYBERDYNE_PUSHER_APP_ID']
+Pusher.key = ENV['CYBERDYNE_PUSHER_KEY']
+Pusher.secret = ENV['CYBERDYNE_PUSHER_SECRET']

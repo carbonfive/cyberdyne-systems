@@ -1,1 +1,1 @@
-web: rails server -p 3000
+web: bundle exec rails server thin -p $PORT -e $RACK_ENV

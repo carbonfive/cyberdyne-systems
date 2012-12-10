@@ -7,22 +7,23 @@ table.table.table-striped
       th ID
       th Image
       th Name
-      th Email
       th Actions
 
   tbody
   - @targets.each do |target|
     tr class=('error' if target.priority?)
       td= link_to target.id, target_path(target)
-      td= avatar_tag(target, size: 20)
-      td= target.name
-      td= target.email
       td
-        a.call.btn.btn-primary href="tel:#{target.phone_number}"
-          i.icon-phone
-          '
-          | Call
-        '
+        - if target.image_url.present?
+          img(src=target.image_url)
+      td= target.name
+      td
+        - if target.phone_number.present?
+          a.call.btn.btn-primary href="tel:#{target.phone_number}"
+            i.icon-phone
+            '
+            | Call
+            '
         = link_to 'Terminate', target_path(target), method: :delete, data: { confirm: 'Terminate the target?' }, class: 'btn btn-danger'
 
 = link_to 'New Target', new_target_path, class: 'btn btn-primary'

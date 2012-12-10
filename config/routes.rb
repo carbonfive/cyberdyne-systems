@@ -3,7 +3,7 @@ Cyberdyne::Application.routes.draw do
 
   resources :calls do
     collection do
-      get :available_users
+      get :next
     end
   end
 

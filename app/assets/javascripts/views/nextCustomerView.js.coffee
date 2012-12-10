@@ -14,5 +14,6 @@ class window.NextCustomerView extends Backbone.View
       @$el.removeAttr('disabled', 'disabled').removeClass('disabled')
 
   fetchNextCustomer: ->
-    @model.fetch()
-    @model.call?.set(phone_number: 'Waiting for call...')
+    unless @model.call?.get('phone_number')?
+      @model.fetch()
+      @model.call?.set(phone_number: 'Waiting for call...')

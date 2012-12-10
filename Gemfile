@@ -31,6 +31,8 @@ group :test, :development do
   gem 'jasminerice'
   gem 'timecop'
   gem 'simplecov'
+  gem 'cucumber'
+  gem 'wopr', git: 'git@github.com:carbonfive/wopr'
 end
 
 group :development do

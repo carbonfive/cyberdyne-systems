@@ -7,7 +7,7 @@ html
     script src="http://js.pusher.com/1.12/pusher.min.js"
     = csrf_meta_tag
 
-  body id=(controller.controller_name) class=(controller.action_name)
+  body id=(controller.controller_name) class=(controller.action_name) data-pusher-key=(Pusher.key) data-user-id=(current_user ? current_user.id : nil)
     .wrapper
       .container
         header.navbar.navbar-fixed-top
@@ -24,10 +24,10 @@ html
                       .input-append.input-prepend#call
                         span.add-on
                           i.icon-phone
-                        input type='text'
-                        button.btn.make-call type='button' Call
+                        input#number type='text'
+                        button.btn.make-call#dial type='button' Dial
                       '
-                      button.btn#next-customer type='button' Next Customer
+                      button.btn#next-customer type='button' Next Target
                   li.dropdown
                     a.dropdown-toggle href='#' data-toggle='dropdown'
                       = current_user.email

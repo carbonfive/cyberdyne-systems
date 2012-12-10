@@ -1,4 +1,7 @@
+.env
 /.bundle
 /db/*.sqlite3
 /log/*.log
 /tmp
+bots.rb
+staging.rb

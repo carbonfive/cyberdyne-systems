@@ -13,7 +13,7 @@ class CallsController < ApplicationController
     end
   end
 
-  def available_users
+  def next
     current_user.pickup_from_queue!
     head :ok
   end
